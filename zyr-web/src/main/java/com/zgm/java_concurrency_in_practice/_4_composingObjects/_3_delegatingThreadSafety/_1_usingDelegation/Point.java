@@ -21,4 +21,9 @@ public class Point {
 		this.x = x;
 		this.y = y;
 	}
+
+	public Point(Point location) {
+		this.x = location.x;
+		this.y = location.y;
+	}
 }

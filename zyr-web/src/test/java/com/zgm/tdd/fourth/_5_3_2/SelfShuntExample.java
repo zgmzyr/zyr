@@ -14,7 +14,7 @@ public class SelfShuntExample implements PricingService {
 		return 10.0f;
 	}
 	
-	@Test
+	@Test222
 	public void testOrderProcessorWithMockObject() throws Exception {
 		
 	}
