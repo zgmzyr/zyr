@@ -10,6 +10,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -26,16 +28,21 @@ public class CallableDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ExecutorService executorService = Executors.newCachedThreadPool();
+//		ExecutorService executorService = Executors.newCachedThreadPool();
+//		ExecutorService executorService = Executors.newCachedThreadPool();
+		ExecutorService executorService = new ThreadPoolExecutor(2, 20, 10, TimeUnit.SECONDS, new SynchronousQueue<Runnable>()); 
+//		ExecutorService executorService = new ThreadPoolExecutor(2, 2, 10, TimeUnit.SECONDS, new SynchronousQueue<Runnable>()); 
+		
+//		ExecutorService executorService = Executors.newFixedThreadPool(3);
 		ArrayList<Future<String>> results = new ArrayList<Future<String>>();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			results.add(executorService.submit(new TaskWithResult(i)));
 		}
 		
 		for (Future<String> future : results) {
 			try {
-//				System.out.println("get : " + future.get());
+				System.out.println("get : " + future.get());
 				try {
 					System.out.println("get : " + future.get(2, TimeUnit.SECONDS));
 				} catch (TimeoutException e) {
