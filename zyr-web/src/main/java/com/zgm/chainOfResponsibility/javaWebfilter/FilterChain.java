@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilterChain implements Filter {
-	private List<Filter> filters = new ArrayList<Filter>();
+	private List<Filter> filters = new ArrayList();
 	int index = 0;
 	
 	
-	@Override
 	public void doFilter(Request request, Response response, FilterChain chain) {
 		
 		if(index == filters.size()){
