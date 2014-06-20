@@ -69,4 +69,9 @@ public class Test222 {
 		out.close();
 		connection.disconnect();
 	}
+	
+	@Test
+	public void test4() {
+		System.out.println(0b1_001_011_001);
+	}
 }
