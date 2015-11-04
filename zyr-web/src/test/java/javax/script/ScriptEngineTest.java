@@ -41,7 +41,7 @@ public class ScriptEngineTest {
 			Invocable invoke = (Invocable) engine; 
 
 
-			String c = (String) invoke.invokeFunction("encryptCont", "871217");
+			String c = (String) invoke.invokeFunction("encryptCont", "xxxxx");
 
 			System.out.println("c = " + c);
 			

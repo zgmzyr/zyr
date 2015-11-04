@@ -134,7 +134,7 @@ public class CloseableHttpClientTest2 {
 			params.setParameter("password", pass);
 			params.setParameter("password_Controls", "normal");
 			params.setParameter("type", "Z");
-			params.setParameter("fundAccount", "340000009785");
+			params.setParameter("fundAccount", "xxxxxxx");
 			params.setParameter("ticket", "6153");
 			params.setParameter("retUrl", "");
 			params.setParameter("mac", "");
@@ -167,7 +167,7 @@ public class CloseableHttpClientTest2 {
 			params.put("password", pass);
 			params.put("password_Controls", "normal");
 			params.put("type", "Z");
-			params.put("fundAccount", "340000009785");
+			params.put("fundAccount", "xxxx");
 			params.put("ticket", "6759");
 			params.put("retUrl", "");
 			params.put("mac", "");
