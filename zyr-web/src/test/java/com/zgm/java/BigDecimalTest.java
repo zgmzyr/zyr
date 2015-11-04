@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 
  * @author 周光明 Exp
@@ -29,6 +31,19 @@ public class BigDecimalTest {
 		
 		int i = (int) (d * 100);
 		System.out.println(i);
+		
+		
+		JSONObject jobj = new JSONObject();
+		double a = 245.33;
+//		BigDecimal valueOf2 = new BigDecimal("245.33");
+//		BigDecimal valueOf2 = new BigDecimal(String.valueOf(a));
+		BigDecimal valueOf2 = new BigDecimal(a);
+		BigDecimal subtract = valueOf2.subtract(new BigDecimal("50.00"));
+		jobj.put("aa", subtract);
+//		jobj.put("aa", subtract.doubleValue());
+		
+		System.out.println(subtract.doubleValue());
+		System.out.println(jobj.get("aa"));
 		
 		
 	}
